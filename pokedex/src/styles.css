@@ -1,0 +1,251 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #c5c4c4;
+  }
+  
+  nav {
+    background-color: #d32020;
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .pokemon-card {
+    background-color: white; /* Always starts white */
+    color: black;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-transform: capitalize;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    width: 150px;
+    transition: transform 0.2s, background-color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .pokemon-card:hover {
+    transform: scale(1.05);
+    animation: bounce 1s infinite ease-in-out;
+  }
+  
+  /* Now override type-specific hover color only on hover */
+  .pokemon-card.fire:hover { background-color: #EE8130; color: white; }
+  .pokemon-card.water:hover { background-color: #6390F0; color: white; }
+  .pokemon-card.electric:hover { background-color: #F7D02C; color: black; }
+  .pokemon-card.grass:hover { background-color: #7AC74C; color: black; }
+  .pokemon-card.ice:hover { background-color: #96D9D6; color: black; }
+  .pokemon-card.fighting:hover { background-color: #C22E28; color: white; }
+  .pokemon-card.poison:hover { background-color: #A33EA1; color: white; }
+  .pokemon-card.ground:hover { background-color: #E2BF65; color: black; }
+  .pokemon-card.flying:hover { background-color: #A98FF3; color: black; }
+  .pokemon-card.psychic:hover { background-color: #F95587; color: white; }
+  .pokemon-card.bug:hover { background-color: #A6B91A; color: black; }
+  .pokemon-card.rock:hover { background-color: #B6A136; color: black; }
+  .pokemon-card.ghost:hover { background-color: #735797; color: white; }
+  .pokemon-card.dragon:hover { background-color: #6F35FC; color: white; }
+  .pokemon-card.dark:hover { background-color: #705746; color: white; }
+  .pokemon-card.steel:hover { background-color: #B7B7CE; color: black; }
+  .pokemon-card.fairy:hover { background-color: #D685AD; color: black; }
+  .pokemon-card.normal:hover { background-color: #A8A77A; color: black; }
+  
+  
+  .pokemon-card img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .pagination button {
+    padding: 0.5rem 1rem;
+    margin: 0 1rem;
+    border: none;
+    background-color: blue;
+    color: yellow;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .yellow-blue-text {
+    color: yellow;
+    text-shadow:
+      -2px -2px 0 blue,
+       2px -2px 0 blue,
+      -2px  2px 0 blue,
+       2px  2px 0 blue;
+  }
+  
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* centers horizontally */
+    justify-content: center;     /* centers vertically */
+    text-align: center;
+    height: calc(100vh - 70px);  /* adjust for nav bar height */
+    width: 100vw;                /* ensure full screen width */
+    box-sizing: border-box;
+    padding: 2rem;
+  }
+
+  .info-box {
+    background-color: white;
+    color: black;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    text-align: left;
+  }
+
+  .pokemon-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .pokemon-modal-content {
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: zoomIn 0.3s ease-out;
+  }
+  
+  
+  .pokemon-modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+
+  .type-badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    margin: 0.2rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: white;
+    background-color: gray; /* fallback */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  
+  .type-badge:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+  
+
+  /* Type background + text colors */
+.normal { background-color: #A8A77A; color: black; }
+.fire { background-color: #EE8130; color: white; }
+.water { background-color: #6390F0; color: white; }
+.electric { background-color: #F7D02C; color: black; }
+.grass { background-color: #7AC74C; color: black; }
+.ice { background-color: #96D9D6; color: black; }
+.fighting { background-color: #C22E28; color: white; }
+.poison { background-color: #A33EA1; color: white; }
+.ground { background-color: #E2BF65; color: black; }
+.flying { background-color: #A98FF3; color: black; }
+.psychic { background-color: #F95587; color: white; }
+.bug { background-color: #A6B91A; color: black; }
+.rock { background-color: #B6A136; color: black; }
+.ghost { background-color: #735797; color: white; }
+.dragon { background-color: #6F35FC; color: white; }
+.dark { background-color: #705746; color: white; }
+.steel { background-color: #B7B7CE; color: black; }
+.fairy { background-color: #D685AD; color: black; }
+
+
+
+  
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  
+  

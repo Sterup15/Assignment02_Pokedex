@@ -43,44 +43,24 @@ body {
   }
   
   .pokemon-card {
-    background-color: white; /* Always starts white */
-    color: black;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    text-transform: capitalize;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    text-align: center;
-    width: 150px;
-    transition: transform 0.2s, background-color 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
+  background-color: white; /* Always starts white */
+  color: black;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-transform: capitalize;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  width: 150px;
+  transition: transform 0.2s, background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
   .pokemon-card:hover {
     transform: scale(1.05);
+    background-color: var(--type-color);
     animation: bounce 1s infinite ease-in-out;
   }
-  
-  /* Now override type-specific hover color only on hover */
-  .pokemon-card.fire:hover { background-color: #EE8130; color: white; }
-  .pokemon-card.water:hover { background-color: #6390F0; color: white; }
-  .pokemon-card.electric:hover { background-color: #F7D02C; color: black; }
-  .pokemon-card.grass:hover { background-color: #7AC74C; color: black; }
-  .pokemon-card.ice:hover { background-color: #96D9D6; color: black; }
-  .pokemon-card.fighting:hover { background-color: #C22E28; color: white; }
-  .pokemon-card.poison:hover { background-color: #A33EA1; color: white; }
-  .pokemon-card.ground:hover { background-color: #E2BF65; color: black; }
-  .pokemon-card.flying:hover { background-color: #A98FF3; color: black; }
-  .pokemon-card.psychic:hover { background-color: #F95587; color: white; }
-  .pokemon-card.bug:hover { background-color: #A6B91A; color: black; }
-  .pokemon-card.rock:hover { background-color: #B6A136; color: black; }
-  .pokemon-card.ghost:hover { background-color: #735797; color: white; }
-  .pokemon-card.dragon:hover { background-color: #6F35FC; color: white; }
-  .pokemon-card.dark:hover { background-color: #705746; color: white; }
-  .pokemon-card.steel:hover { background-color: #B7B7CE; color: black; }
-  .pokemon-card.fairy:hover { background-color: #D685AD; color: black; }
-  .pokemon-card.normal:hover { background-color: #A8A77A; color: black; }
-  
   
   .pokemon-card img {
     width: 100px;
